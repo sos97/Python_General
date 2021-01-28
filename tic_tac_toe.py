@@ -88,7 +88,7 @@ while outer != 0:
 						break
 			if inner == 0:
 				break
-		print(len(p1_c)+len(p2_c))
+		#print(len(p1_c)+len(p2_c))
 		if (len(p1_c)+len(p2_c)) >= 9:
 			print("=========================")
 			for i in range(5):
@@ -173,7 +173,7 @@ while outer != 0:
 						break
 			if inner == 0:
 				break
-		print(len(p1_c)+len(p2_c))
+		#print(len(p1_c)+len(p2_c))
 		if (len(p1_c)+len(p2_c)) >= 9:
 			print("=========================")
 			for i in range(5):

@@ -2,6 +2,7 @@ outer = 1
 while outer != 0:
 	board = [["","","","",""],["","","","",""],["","","","",""],["","","","",""],["","","","",""]]
 	success_list = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
+	legal_moves = [1,2,3,4,5,6,7,8,9]
 	c = 1
 	for i in range(5):
 	    for j in range(5):
@@ -31,7 +32,15 @@ while outer != 0:
 		    print()
 		print("=========================")
 		print("player1:")
-		p1 = int(input(">"))
+		
+		while True:
+			p1 = int(input(">"))
+			if p1 not in legal_moves:
+				print("Invalid Position...Try again:")
+			elif p1 in legal_moves:
+				legal_moves.remove(p1)
+				break
+    
 		sym1 = "x"
 		if p1 ==  1:
 		    board[0][0] = sym1
@@ -79,6 +88,24 @@ while outer != 0:
 						break
 			if inner == 0:
 				break
+		print(len(p1_c)+len(p2_c))
+		if (len(p1_c)+len(p2_c)) >= 9:
+			print("=========================")
+			for i in range(5):
+			    for j in range(5):
+			        print(board[i][j],end = "")
+			    print()
+			print("=========================")
+			print("match draw!!")
+			var = input("want to Start another Game? (yes/no)")
+			if var.lower() == "yes":
+				outer = 1
+				inner = 0
+				break
+			elif var.lower() == "no":
+				outer = 0
+				inner = 0
+				break
 
 
 
@@ -91,7 +118,13 @@ while outer != 0:
 		    print()
 		print("=========================")
 		print("player2:")
-		p2 = int(input(">"))
+		while True:
+			p2 = int(input(">"))
+			if p2 not in legal_moves:
+				print("Invalid Position...Try again:")
+			elif p2 in legal_moves:
+				legal_moves.remove(p2)
+				break
 		sym2 = "o"
 		if p2 ==  1:
 		    board[0][0] = sym2
@@ -140,5 +173,24 @@ while outer != 0:
 						break
 			if inner == 0:
 				break
-	       
+		print(len(p1_c)+len(p2_c))
+		if (len(p1_c)+len(p2_c)) >= 9:
+			print("=========================")
+			for i in range(5):
+			    for j in range(5):
+			        print(board[i][j],end = "")
+			    print()
+			print("=========================")
+			print("match draw!!")
+			var = input("want to Start another Game? (yes/no)")
+			if var.lower() == "yes":
+				outer = 1
+				inner = 0
+				break
+			elif var.lower() == "no":
+				outer = 0
+				inner = 0
+				break
+					
+			
 print("------------- Thanks for playing my game :) --------------")
